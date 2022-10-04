@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ORLimpiadas</title>
+</head>
+<body>
+    <form class="login">
+        <h1>ORLimpiadas</h1>
+        <h3>Ingrese sus datos:</h3>
+        <div class="item">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" minlength="3" required>
+        </div>
+        <div class="item">
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" minlength="3" required>
+        </div>
+        <div class="item">
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+        </div>
+        <div class="item">
+            <label for="hpc">¿Es colaborador en <img id="hpc-logo" src="logo.gif" alt="HPC">?</label>
+            <div>
+                Sí <input type="radio" name="hpc" value="0" required>
+                No <input type="radio" name="hpc" value="1" required>
+            </div>
+        </div>
+        <button type="button" class="btn" onclick="ingresar()">Ingresar</button>
+    </form>
+
+    <div class="out">
+        <img src="logo.gif" alt="HPC">
+        <h3>Estimado/a <span id="apellido"></span><span id="nombre"></span></h3>
+        <h3>Gracias por participar!</h3>
+        <h5>Sus respuestas se guardaron correctamente</h5>
+    </div>
+
+    <form class="cuestionario">
+
+        <!-- 1 -->
+        <div class="pregunta">
+            <div class="titulo">
+                <div class="nro">1</div>
+                Paciente de 45 años de edad que presenta vértigo incapacitante y refractario al
+                tratamiento médico completo, cual es la terapéutica más adecuada?
+            </div>
+            <div class="respuestas">
+                <div class="respuesta">a. Estapedectomía <input type="radio" name="res1" value="a" required></div>
+                <div class="respuesta">b. Estapedostomía<input type="radio" name="res1" value="b" required></div>
+                <div class="respuesta">c. Neurectomía vestibular/ descompresión del saco endolinfático<input type="radio" name="res1" value="c" required></div>
+                <div class="respuesta">d. Timpanectomía<input type="radio" name="res1" value="d" required></div>
+                <div class="respuesta">e. Maniobras de reposición canalicular<input type="radio" name="res1" value="e" required></div>
+            </div>
+        </div>
+        
+        <!-- 2 -->
+        <div class="pregunta">
+            <div class="titulo">
+                <div class="nro">2</div> 
+                Cuál de estos pares craneales es el más tempranamente afectado en un tumor de cavum?  
+            </div>
+            <div class="respuestas">
+                <div class="respuesta">a. IV par <input type="radio" name="res2" value="a" required></div>
+                <div class="respuesta">b. VI par <input type="radio" name="res2" value="b" required></div>
+                <div class="respuesta">c. III par <input type="radio" name="res2" value="c" required></div>
+                <div class="respuesta">d. Rama oftálmica del V par <input type="radio" name="res2" value="d" required></div>
+                <div class="respuesta">e. Rama maxilar del V par <input type="radio" name="res2" value="e" required></div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="pregunta">
+            <div class="titulo">
+                <div class="nro">3</div> 
+                Cual es el tratamiento de elección en un paciente de 35 años de edad con diagnóstico de colesteatoma?
+            </div>
+            <div class="respuestas">
+                <div class="respuesta">a. Tratamiento antibiótico según antibiograma<input type="radio" name="res3" value="a" required></div>
+                <div class="respuesta">b. Corticoides intratimpánicos <input type="radio" name="res3" value="b" required></div>
+                <div class="respuesta">c. Instrumentación y toilettes frecuentes en consultorio <input type="radio" name="res3" value="c" required></div>
+                <div class="respuesta">d. Radioterapia radical <input type="radio" name="res3" value="d" required></div>
+                <div class="respuesta">e. Tratamiento quirúrgico <input type="radio" name="res3" value="e" required></div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="pregunta">
+            <div class="titulo">
+                <div class="nro">4</div> 
+                Cual de las siguientes características NO corresponde a un cuadro típico de VPPB?
+            </div>
+            <div class="respuestas">
+                <div class="respuesta">a. Hipoacusia y acúfeno que se presentan durante el episodio <input type="radio" name="res4" value="a" required></div>
+                <div class="respuesta">b. Vértigo de segundos de duración <input type="radio" name="res4" value="b" required></div>
+                <div class="respuesta">c. El cuadro se desencadena por movimientos cefalicos <input type="radio" name="res4" value="c" required></div>
+                <div class="respuesta">d. El nistagmus se desencadena con la maniobra de Dix Halpike <input type="radio" name="res4" value="d" required></div>
+                <div class="respuesta">e. Períodos intercrisis asintomáticos <input type="radio" name="res4" value="e" required></div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="pregunta">
+            <div class="titulo">
+                <div class="nro">5</div> 
+                Que estudio debe solicitarse a un paciente varón de 6 años de edad que presenta poliposis nasal bilateral?
+            </div>
+            <div class="respuestas">
+                <div class="respuesta">a. Estudio bacteriológico de secreciones nasales <input type="radio" name="res5" value="a" required></div>
+                <div class="respuesta">b. Test del sudor <input type="radio" name="res5" value="b" required></div>
+                <div class="respuesta">c. Rinodebitomanometría <input type="radio" name="res5" value="c" required></div>
+                <div class="respuesta">d. Videoestroboscopía <input type="radio" name="res5" value="d" required></div>
+                <div class="respuesta">e. Ninguno de los anteriores, las poliposis nasales son frecuentes en la infancia <input type="radio" name="res5" value="e" required></div>
+            </div>
+        </div>
+
+
+        <button type="button" class="btn" onclick="enviarRespuestas()">Enviar respuestas</button>
+    </form>
+
+    
+</body>
+</html>
+<script>
+    const loginForm = document.querySelector("form.login");
+    const cuestionarioForm = document.querySelector("form.cuestionario");
+    const out = document.querySelector(".out");
+    const correctas = ["a", "b", "c", "d", "e"];
+
+    let puntuacion = 0;
+
+    function ingresar(){
+
+        if(loginForm.reportValidity()){
+            loginForm.style.display = "none";
+            cuestionarioForm.style.opacity = "1";
+            cuestionarioForm.style.transform = "translateX(0)";
+        }
+
+        //Insert bd
+    }
+
+    function enviarRespuestas(){
+
+        if(cuestionarioForm.reportValidity()){
+            chequearRespuestas();
+        }
+
+    }
+
+    function despedir(){
+        document.querySelector("span#apellido").innerHTML = loginForm.apellido.value;
+        document.querySelector("span#nombre").innerHTML = loginForm.nombre.value;
+
+        out.style.display = "flex";
+        out.style.opacity = "1";
+    }
+    
+    function getRespuestas(){
+        let respuestas = [];
+
+        document.querySelectorAll("form.cuestionario input[type=radio]:checked").forEach(radio => {
+            respuestas.push(radio.value);
+        }) 
+        
+        return respuestas;
+    }
+
+    function chequearRespuestas(){
+
+        let respuestas = getRespuestas();
+        let ok = 0;
+
+        for(let i = 0; i < respuestas.length; i++){
+
+            let pregunta = document.querySelectorAll(".pregunta")[i];
+
+            if(correctas[i] == respuestas[i]){
+                pregunta.classList.add("correcta")
+                ok++; 
+            } else {
+                pregunta.classList.add("incorrecta")   
+            }
+
+            pregunta.querySelectorAll("input").forEach(radio => {
+
+                if(radio.value == correctas[i]) radio.parentElement.classList.add("correcta");
+                if(radio.value != correctas[i] && radio.checked) radio.parentElement.classList.add("incorrecta");
+                radio.disabled = true;
+                if(radio.value == correctas[i]){
+
+                    radio.outerHTML = "<div>✔️</div>"
+                }else if(radio.value != correctas[i] && radio.checked){
+
+                    radio.outerHTML = "<div>❌</div>"
+                }else{
+
+                    radio.outerHTML = "<div></div>"
+                }
+            });
+        }
+
+        if(ok != 0){
+            puntuacion = (ok / correctas.length ) * 100;
+        }
+    }
+
+</script>

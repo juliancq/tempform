@@ -1,0 +1,232 @@
+
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    accent-color: #199aa5;
+    font-family: system-ui, sans-serif;
+}
+
+html{  }
+
+
+.login{
+    
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    position: fixed;
+    z-index: 100;
+    display: none;
+
+    h1{
+        font-size: 2.5em;
+        color: #00a6c5;
+    }
+
+    h3{
+        font-weight: 400;
+    }
+
+    input[type=text], input[type=email]{
+
+        height: 2em;
+        border: 1px solid #199aa5;
+        border-radius: 1em;
+        padding-inline: 1em;
+        outline: none;
+
+        &:focus{
+            outline: 1.5px solid #199aa5;
+        }
+    }
+
+    .item{
+        display: flex; flex-direction: column;
+        min-width: 250px;
+        gap: .25em;
+
+        #hpc-logo{
+            width: 50px;
+            transform: translateY(5px);
+        }
+    }
+}
+
+.cuestionario{
+    
+
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 3em;
+    padding-block: 35px;
+    //opacity: 0;
+    // transition: opacity 2s ease;
+    //transform: translateX(-500px);
+    transition: all 1s ease;
+
+    .pregunta{
+        box-shadow: 0px 0px 9px 0px #8b8b8b;
+        width: 90%;
+        border-radius: 1em;
+
+
+        .titulo{
+            text-align: center;
+            width: 100%;
+            background-color: #199aa5;
+            min-height: 2.5em;
+            padding: 1em;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .95em;
+            position: relative;
+            border-radius: 15px 15px 0 0;
+            //border-radius: 15px;
+
+            .nro{
+                background-color: white;
+                color: #199aa5;
+                
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                border: 3px solid #199aa5;
+                border-radius: 50%;
+                font-size: 1.5em;
+            }
+        }
+
+        .respuestas{
+            display: flex; flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 1em;
+            gap: 0.5em;
+            padding-block: 1em;
+
+            .respuesta{
+                display: flex;
+                justify-content: space-between;
+                width: 90%;
+                padding: 0.5em 1.5em;
+                border-radius: 15px;
+        //box-shadow: 0px 0px 9px 0px #8b8b8b;
+
+            }
+
+            .correcta{
+                border: 1px solid rgba(4, 77, 4, 0.3);
+                background-color: rgba(16, 221, 16, 0.2);
+            }
+            
+            .incorrecta{
+                border: 1px solid rgba(240, 24, 24, 0.3);
+                background-color: rgba(240, 24, 24, 0.2);
+            }
+
+            
+
+            input[type=text], input[type=number]{
+
+                height: 2em;
+                width: 100%;
+                border: 1px solid #199aa5;
+                border-radius: 1em;
+                padding-inline: 1em;
+                outline: none;
+                text-align: center;
+        
+                &:focus{
+                    outline: 1.5px solid #199aa5;
+                }
+            }
+
+            input[type=radio][disabled]{
+                background-color: black;
+            }
+
+            textarea{
+                width: 95%;
+                height: 12em;
+                resize: none;
+                border: none;
+                padding: 1em;
+                outline: none;
+            }
+        }
+    }
+
+    .correcta{
+        
+        .titulo{
+            //background-color : #51c251;
+
+            .nro{
+                // color : #51c251;
+                // border : 3px solid #51c251
+            }
+        }    
+    }
+
+    .incorrecta{
+        .titulo{
+            //background-color : #d13232;
+
+            .nro{
+                // color : #d13232;
+                // border : 3px solid #d13232
+            }
+        }  
+    }
+}
+
+
+.out{
+    
+    width: 100vw;
+    height: 100vh;
+
+    background-color: whitesmoke;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .75em;
+
+    position: fixed;
+    display: none;
+    background-image: url("hpc-low.png");
+    opacity: 0;
+    transition: all 5s ease;
+    z-index: 200;
+
+    & *{
+        font-weight: 600;
+    }
+}
+
+
+.btn{
+    padding: .25em .75em;
+    border: 2px solid #199aa5;
+    border-radius: 1em;
+    color: #199aa5;
+    background-color: white;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 400;
+}
