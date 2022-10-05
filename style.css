@@ -22,12 +22,16 @@
 .login h1 {
   font-size: 3em;
   color: #00a6c5;
+  text-decoration: underline;
+  font-style: italic;
+  -webkit-text-decoration-color: #4cbcd1;
+          text-decoration-color: #4cbcd1;
 }
 .login h3 {
   font-weight: 400;
 }
 .login input[type=text], .login input[type=email] {
-  height: 2em;
+  height: 2.5em;
   border: 1px solid #199aa5;
   border-radius: 1em;
   padding-inline: 1em;
