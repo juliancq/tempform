@@ -23,12 +23,12 @@ html{  }
     display: flex; flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 1.5em;
     position: fixed;
     z-index: 100;
 
     h1{
-        font-size: 2.5em;
+        font-size: 3em;
         color: #00a6c5;
     }
 
@@ -53,6 +53,7 @@ html{  }
         display: flex; flex-direction: column;
         min-width: 250px;
         gap: .25em;
+        width: 75%;
 
         #hpc-logo{
             width: 50px;
@@ -246,7 +247,7 @@ html{  }
 
 
 .btn{
-    padding: .25em .75em;
+    padding: .5em 1.5em;
     border: 2px solid #199aa5;
     border-radius: 1em;
     color: #199aa5;

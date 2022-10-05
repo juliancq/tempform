@@ -15,12 +15,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 1.5em;
   position: fixed;
   z-index: 100;
 }
 .login h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   color: #00a6c5;
 }
 .login h3 {
@@ -41,6 +41,7 @@
   flex-direction: column;
   min-width: 250px;
   gap: 0.25em;
+  width: 75%;
 }
 .login .item #hpc-logo {
   width: 50px;
@@ -183,7 +184,7 @@
 }
 
 .btn {
-  padding: 0.25em 0.75em;
+  padding: 0.5em 1.5em;
   border: 2px solid #199aa5;
   border-radius: 1em;
   color: #199aa5;
