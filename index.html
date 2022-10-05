@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>ORLimpiadas</title>
 </head>
 <body>
@@ -21,18 +22,19 @@
         </div>
         <div class="item">
             <label for="email">Email</label>
-            <input type="email" name="email" required>
+            <input type="email" name="email">
         </div>
         <div class="item">
             <label for="hpc">¿Es colaborador en <img id="hpc-logo" src="logo.gif" alt="HPC">?</label>
             <div>
-                Sí <input type="radio" name="hpc" value="0" required>
-                No <input type="radio" name="hpc" value="1" required>
+                Sí <input type="radio" name="hpc" value="1" required>
+                No <input type="radio" name="hpc" value="0" required>
             </div>
         </div>
         <button type="button" class="btn" onclick="ingresar()">Ingresar</button>
     </form>
 
+    <!-- Despide al participante -->
     <div class="out">
         <img src="logo.gif" alt="HPC">
         <h3>Estimado/a <span id="apellido"></span><span id="nombre"></span></h3>
@@ -40,12 +42,25 @@
         <h5>Sus respuestas se guardaron correctamente</h5>
     </div>
 
-    <form class="cuestionario">
+    <!-- Bloquea la actividad -->
+    <div class="loading">
+        <img src="loading.gif" alt="Cargando">
+        Cargando...
+    </div>
 
+    <form class="cuestionario">
+        <div>
+            <div class="header">
+                <img src="/logo.gif">
+                <span id="puntaje"></span>
+            </div>
+            <br>
+            <span id="correctas"></span>
+        </div>
         <!-- 1 -->
         <div class="pregunta">
             <div class="titulo">
-                <div class="nro">1</div>
+                <div class="nro">#1</div>
                 Paciente de 45 años de edad que presenta vértigo incapacitante y refractario al
                 tratamiento médico completo, cual es la terapéutica más adecuada?
             </div>
@@ -61,7 +76,7 @@
         <!-- 2 -->
         <div class="pregunta">
             <div class="titulo">
-                <div class="nro">2</div> 
+                <div class="nro">#2</div> 
                 Cuál de estos pares craneales es el más tempranamente afectado en un tumor de cavum?  
             </div>
             <div class="respuestas">
@@ -76,7 +91,7 @@
         <!-- 3 -->
         <div class="pregunta">
             <div class="titulo">
-                <div class="nro">3</div> 
+                <div class="nro">#3</div> 
                 Cual es el tratamiento de elección en un paciente de 35 años de edad con diagnóstico de colesteatoma?
             </div>
             <div class="respuestas">
@@ -91,7 +106,7 @@
         <!-- 4 -->
         <div class="pregunta">
             <div class="titulo">
-                <div class="nro">4</div> 
+                <div class="nro">#4</div> 
                 Cual de las siguientes características NO corresponde a un cuadro típico de VPPB?
             </div>
             <div class="respuestas">
@@ -106,7 +121,7 @@
         <!-- 5 -->
         <div class="pregunta">
             <div class="titulo">
-                <div class="nro">5</div> 
+                <div class="nro">#5</div> 
                 Que estudio debe solicitarse a un paciente varón de 6 años de edad que presenta poliposis nasal bilateral?
             </div>
             <div class="respuestas">
@@ -119,94 +134,9 @@
         </div>
 
 
-        <button type="button" class="btn" onclick="enviarRespuestas()">Enviar respuestas</button>
+        <button type="button" id="enviar-btn" class="btn" onclick="enviarRespuestas()">Enviar respuestas</button>
     </form>
 
     
 </body>
 </html>
-<script>
-    const loginForm = document.querySelector("form.login");
-    const cuestionarioForm = document.querySelector("form.cuestionario");
-    const out = document.querySelector(".out");
-    const correctas = ["a", "b", "c", "d", "e"];
-
-    let puntuacion = 0;
-
-    function ingresar(){
-
-        if(loginForm.reportValidity()){
-            loginForm.style.display = "none";
-            cuestionarioForm.style.opacity = "1";
-            cuestionarioForm.style.transform = "translateX(0)";
-        }
-
-        //Insert bd
-    }
-
-    function enviarRespuestas(){
-
-        if(cuestionarioForm.reportValidity()){
-            chequearRespuestas();
-        }
-
-    }
-
-    function despedir(){
-        document.querySelector("span#apellido").innerHTML = loginForm.apellido.value;
-        document.querySelector("span#nombre").innerHTML = loginForm.nombre.value;
-
-        out.style.display = "flex";
-        out.style.opacity = "1";
-    }
-    
-    function getRespuestas(){
-        let respuestas = [];
-
-        document.querySelectorAll("form.cuestionario input[type=radio]:checked").forEach(radio => {
-            respuestas.push(radio.value);
-        }) 
-        
-        return respuestas;
-    }
-
-    function chequearRespuestas(){
-
-        let respuestas = getRespuestas();
-        let ok = 0;
-
-        for(let i = 0; i < respuestas.length; i++){
-
-            let pregunta = document.querySelectorAll(".pregunta")[i];
-
-            if(correctas[i] == respuestas[i]){
-                pregunta.classList.add("correcta")
-                ok++; 
-            } else {
-                pregunta.classList.add("incorrecta")   
-            }
-
-            pregunta.querySelectorAll("input").forEach(radio => {
-
-                if(radio.value == correctas[i]) radio.parentElement.classList.add("correcta");
-                if(radio.value != correctas[i] && radio.checked) radio.parentElement.classList.add("incorrecta");
-                radio.disabled = true;
-                if(radio.value == correctas[i]){
-
-                    radio.outerHTML = "<div>✔️</div>"
-                }else if(radio.value != correctas[i] && radio.checked){
-
-                    radio.outerHTML = "<div>❌</div>"
-                }else{
-
-                    radio.outerHTML = "<div></div>"
-                }
-            });
-        }
-
-        if(ok != 0){
-            puntuacion = (ok / correctas.length ) * 100;
-        }
-    }
-
-</script>
