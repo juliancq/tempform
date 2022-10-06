@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  accent-color: #199aa5;
+  accent-color: #00a6c5;
   font-family: system-ui, sans-serif;
 }
 
@@ -24,21 +24,19 @@
   color: #00a6c5;
   text-decoration: underline;
   font-style: italic;
-  -webkit-text-decoration-color: #4cbcd1;
-          text-decoration-color: #4cbcd1;
 }
 .login h3 {
   font-weight: 400;
 }
 .login input[type=text], .login input[type=email] {
   height: 2.5em;
-  border: 1px solid #199aa5;
+  border: 1px solid #00a6c5;
   border-radius: 1em;
   padding-inline: 1em;
   outline: none;
 }
 .login input[type=text]:focus, .login input[type=email]:focus {
-  outline: 1.5px solid #199aa5;
+  outline: 1.5px solid #00a6c5;
 }
 .login .item {
   display: flex;
@@ -85,7 +83,7 @@
 .cuestionario .pregunta .titulo {
   text-align: center;
   width: 100%;
-  background-color: #199aa5;
+  background-color: #00a6c5;
   min-height: 2.5em;
   padding: 1em;
   color: white;
@@ -98,13 +96,13 @@
 }
 .cuestionario .pregunta .titulo .nro {
   background-color: white;
-  color: #199aa5;
+  color: #00a6c5;
   width: 40px;
   height: 40px;
   position: absolute;
   top: -15px;
   left: -15px;
-  border: 2px solid #199aa5;
+  border: 2px solid #00a6c5;
   border-radius: 50%;
   font-weight: 600;
   font-size: 1em;
@@ -141,14 +139,14 @@
 .cuestionario .pregunta .respuestas input[type=text], .cuestionario .pregunta .respuestas input[type=number] {
   height: 2em;
   width: 100%;
-  border: 1px solid #199aa5;
+  border: 1px solid #00a6c5;
   border-radius: 1em;
   padding-inline: 1em;
   outline: none;
   text-align: center;
 }
 .cuestionario .pregunta .respuestas input[type=text]:focus, .cuestionario .pregunta .respuestas input[type=number]:focus {
-  outline: 1.5px solid #199aa5;
+  outline: 1.5px solid #00a6c5;
 }
 .cuestionario .pregunta .respuestas input[type=radio][disabled] {
   background-color: black;
@@ -195,10 +193,10 @@
 }
 
 .btn {
-  padding: 0.5em 1.5em;
-  border: 2px solid #199aa5;
+  padding: 0.5em 3em;
+  border: 2px solid #00a6c5;
   border-radius: 1em;
-  color: #199aa5;
+  color: #00a6c5;
   background-color: white;
   font-size: 1em;
   cursor: pointer;

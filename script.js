@@ -5,7 +5,7 @@ const loading = document.querySelector(".loading");
 const correctas = ["a", "b", "c", "d", "e"];
 let respuestas = [];
 
-let puntuacion = 0;
+let cantCorrectas = 0;
 
 /* Valida el logueo y activa las preguntas*/
 function ingresar(){
@@ -41,13 +41,21 @@ function enviarRespuestas(){
         toggleLoading(false);
     }, 1500);
 
-    console.log({
+    let registro = {
         nombre: loginForm.nombre.value,
         apellido : loginForm.apellido.value,
         email : loginForm.email.value,
         hpc : loginForm.hpc.value,
+        cantCorrectas,
         respuestas
-    })
+    };
+    
+    fetch('insertRegistro.jsp', {body : JSON.stringify(registro), method : 'POST'})
+                .then(r => r.json())
+                .then(r => {
+              
+                    console.log(r);
+                });
 }
 
 /* Activa la pantalla de despedida */
@@ -65,7 +73,7 @@ function getRespuestas(){
 
     document.querySelectorAll("form.cuestionario input[type=radio]:checked").forEach(radio => {
         respuestas.push(radio.value);
-    }) 
+    });
     
     return respuestas;
 }
@@ -82,10 +90,10 @@ function chequearRespuestas(){
         let pregunta = document.querySelectorAll(".pregunta")[i];
 
         if(correctas[i] == respuestas[i]){
-            pregunta.classList.add("correcta")
+            pregunta.classList.add("correcta");
             ok++; 
         } else {
-            pregunta.classList.add("incorrecta")   
+            pregunta.classList.add("incorrecta");
         }
 
         pregunta.querySelectorAll("input").forEach(radio => {
@@ -95,7 +103,7 @@ function chequearRespuestas(){
             radio.disabled = true;
             if(radio.value == correctas[i]){
 
-                radio.outerHTML = "<div>✔️</div>"
+                radio.outerHTML = "<div>✔️</div>";
             }else if(radio.value != correctas[i] && radio.checked){
 
                 radio.outerHTML = "<div>❌</div>"
@@ -106,9 +114,9 @@ function chequearRespuestas(){
         });
     }
 
-    if(ok != 0){
-        mostrarPuntaje(ok);
-    }
+    cantCorrectas = ok;
+    mostrarPuntaje(ok);
+    
 }
 
 /* Activa/desactiva el loader */
@@ -123,16 +131,16 @@ function toggleLoading(status){
 /* Muestra el puntaje en el encabezado */
 function mostrarPuntaje(ok){
     scroll(0,0);
-    document.querySelector("#puntaje").innerHTML = `Su puntaje es: ${(ok / correctas.length ) * 100} %`
-    document.querySelector("#correctas").innerHTML = `Contestó correctamente ${ok} respuesta/s`
+    document.querySelector("#puntaje").innerHTML = `Su puntaje es: ${(ok / correctas.length ) * 100} %`;
+    document.querySelector("#correctas").innerHTML = `Contestó correctamente ${ok} respuesta/s`;
 }
 
 
 /* Extiende la capacidad de clickear el radiobutton a toda la respuesta */
 document.querySelectorAll(".respuesta").forEach(res => {
 
-        res.addEventListener("click", e => {
+        res.addEventListener("click", () => {
 
             res.querySelector("input").click();
-    })
-})
+    });
+});
