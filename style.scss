@@ -23,12 +23,12 @@ html{  }
     display: flex; flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2.5em;
+    gap: 3.5em;
     position: fixed;
     z-index: 100;
 
     h1{
-        font-size: 3em;
+        font-size: 3.5em;
         color: #00a6c5;
         text-decoration: underline;
         font-style: italic;
@@ -41,7 +41,7 @@ html{  }
 
     input[type=text], input[type=email]{
 
-        height: 2.5em;
+        height: 3em;
         border: 1px solid #00a6c5;
         border-radius: 1em;
         padding-inline: 1em;
@@ -67,13 +67,19 @@ html{  }
 
 .cuestionario{
     
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
-    gap: 3em;
     padding-block: 35px;
     opacity: 0;
     transform: translateX(-500px);
     transition: all 1s ease;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 3em;
+
+    .paso{
+        display: flex; flex-direction: column;
+        justify-content: center; align-items: center;
+        gap: 3em;
+    }
 
     .header{
         display: flex;
@@ -91,6 +97,8 @@ html{  }
         font-weight: 100;
         margin: auto;
     }
+
+ 
 
     .pregunta{
         box-shadow: 0px 0px 9px 0px #8b8b8b;
@@ -111,7 +119,7 @@ html{  }
             font-size: .95em;
             position: relative;
             border-radius: 15px 15px 0 0;
-            //border-radius: 15px;
+            min-height: 85px;
 
             .nro{
                 background-color: white;
@@ -266,5 +274,13 @@ html{  }
     font-size: 1em;
     cursor: pointer;
     font-weight: 600;
+
+    &:hover{
+        background-color: #00a6c5;
+        color: white;
+    }
 }
 
+.oculto{
+    display: none;
+}

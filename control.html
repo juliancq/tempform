@@ -7,39 +7,83 @@
     <title>Control ORL</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <style>
+    <style>  
+        h3{
+            text-align: center; padding: .5em; margin: 0; background-color: #e9e9e9;
+        }
+    
         .correcta{
-            background-color: #c4fdc4 !important;
+            background-color: #c4fdc4;
         }
 
         .incorrecta{
-            background-color: #fdc4c4 !important;
+            background-color: #fdc4c4;
+        }
+
+        .btn{
+            border: none;
+            border-radius: 15px;
+            background-color: #e9e9e9;
+            padding-inline: 1.5em;
         }
     </style>
 </head>
 <body>
-    <table class="table puntuaciones">
+    <h3>Resultados</h3>
+    <table class="table">
         <thead>
             <tr>
-                <th style="width: 2em"></th>
-                <th>Participante</th>
-                <th>Email</th>                
-                <th style="width: 1em; text-align: center">#1</th>
-                <th style="width: 1em; text-align: center">#2</th>
-                <th style="width: 1em; text-align: center">#3</th>
-                <th style="width: 1em; text-align: center">#4</th>
-                <th style="width: 1em; text-align: center">#5</th>
-                <th>Puntos</th>
+                <th>Participante</th>          
+                <th style="width: .5em; text-align: center">1</th>
+                <th style="width: .5em; text-align: center">2</th>
+                <th style="width: .5em; text-align: center">3</th>
+                <th style="width: .5em; text-align: center">4</th>
+                <th style="width: .5em; text-align: center">5</th>
+                <th style="width: .5em; text-align: center">6</th>
+                <th style="width: .5em; text-align: center">7</th>
+                <th style="width: .5em; text-align: center">8</th>
+                <th style="width: .5em; text-align: center">9</th>
+                <th style="width: .5em; text-align: center">10</th>
+                <th style="width: .5em; text-align: center">11</th>
+                <th style="width: .5em; text-align: center">12</th>
+                <th style="width: .5em; text-align: center">13</th>
+                <th style="width: .5em; text-align: center">14</th>
+                <th style="width: .5em; text-align: center">15</th>
+                <th style="width: .5em; text-align: center">16</th>
+                <th style="width: .5em; text-align: center">17</th>
+                <th style="width: .5em; text-align: center">18</th>
+                <th style="width: .5em; text-align: center">19</th>
+                <th style="width: .5em; text-align: center">20</th>
+                <th style="width: .5em; text-align: center">21</th>
+                <th style="width: .5em; text-align: center">22</th>
+                <th style="width: .5em; text-align: center">23</th>
+                <th style="width: .5em; text-align: center">24</th>
+                <th style="width: .5em; text-align: center">25</th>
+                <th style="width: .5em; text-align: center">26</th>
+                <th style="width: .5em; text-align: center">27</th>
+                <th style="width: .5em; text-align: center">28</th>
+                <th style="width: .5em; text-align: center">29</th>
+                <th style="width: .5em; text-align: center">30</th>
+                <th style="width: 2em; text-align: center;">Puntos</th>
             </tr>
         </thead>
         <tbody>
             
         </tbody>
     </table>
+    <div style="display: flex; justify-content:center;">
+        <button class="btn" onclick="location.reload()">Actualizar</button>
+    </div>
+    
+
+    <div class="graficos">
+
+    </div>
+    
 </body>
 </html>
 <script>
-    const correctas = ["a", "b", "c", "d", "e"];
+    const correctas = ["c", "b", "e", "a", "b", "b","d","c","a","d","d","e","c","c","b","c","b","d","e","c","b","e","d","e","a","c","b","c","a","e"];
     let participantes = [];
     
     getData();
@@ -50,7 +94,9 @@
         .then(r => {
             
             participantes = r.registros;
-    
+            
+            //getStats(r.registros);
+
             cargarTabla(participantes.sort((a,b) => {
                     
                     return a.cantCorrectas > b.cantCorrectas ? -1 : 1; 
@@ -63,22 +109,53 @@
     function cargarTabla(data){
 
         let html = "";
-
         data.forEach(participante => {
-            html += `<tr>
-                        <td>${participante.hpc == 0 ? "" : "<img src='logo.gif' style='width: 45px;'>"}</td>
+            html += `<tr> 
                         <td>${participante.apellido}, ${participante.nombre}</td>
-                        <td>${participante.email}</td>
-                        <td class="${participante.respuestas[0] == correctas[0] ? "correcta" : "incorrecta"}" style="text-align:center">${participante.respuestas[0]}</td>
-                        <td class="${participante.respuestas[1] == correctas[1] ? "correcta" : "incorrecta"}" style="text-align:center">${participante.respuestas[1]}</td>
-                        <td class="${participante.respuestas[2] == correctas[2] ? "correcta" : "incorrecta"}" style="text-align:center">${participante.respuestas[2]}</td>
-                        <td class="${participante.respuestas[3] == correctas[3] ? "correcta" : "incorrecta"}" style="text-align:center">${participante.respuestas[3]}</td>
-                        <td class="${participante.respuestas[4] == correctas[4] ? "correcta" : "incorrecta"}" style="text-align:center">${participante.respuestas[4]}</td>
-                        
-                        <td>${participante.cantCorrectas}</td>
+                    `;
+                
+            participante.respuestas.forEach((res,i) => {
+                html += `<td class="${res == correctas[i] ? "correcta" : "incorrecta"}" style="text-align:center">${res}</td>`
+            }) 
+                         
+            html += `            
+                        <td style="text-align:center">${participante.cantCorrectas}</td>
                     </tr>`;
         });
 
         document.querySelector("tbody").innerHTML = html;
     }
+
+    function getStats(data){
+        
+
+        correctas.forEach(e => {
+            stats.push({a: 0, b:0, c:0,d:0,e:0});
+        })
+
+        data.forEach(participante => {
+            participante.respuestas.forEach((e,i) => {
+                if(e == "a") stats[i].a++;
+                if(e == "b") stats[i].b++;
+                if(e == "c") stats[i].c++;
+                if(e == "d") stats[i].d++;
+                if(e == "e") stats[i].e++;
+            })
+        })
+        
+        stats.forEach(e => {
+            document.querySelector(".graficos").innerHTML += `<div style="display:flex; width: 500px; height:30px; border: 1px solid black;border-radius: 15px;overflow: hidden;">
+                                                                <div style="width: ${((e.a * 100) / 6)}%;height:100%;background-color:rgb(240, 153, 24);">A</div>
+                                                                <div style="width: ${((e.b * 100) / 6)}%;height:100%;background-color:rgb(200, 153, 24);">B</div>
+                                                                <div style="width: ${((e.c * 100) / 6)}%;height:100%;background-color:rgb(40, 153, 24);">C</div>
+                                                                <div style="width: ${((e.d * 100) / 6)}%;height:100%;background-color:rgb(140, 153, 24);">D</div>
+                                                                <div style="width: ${((e.e * 100) / 6)}%;height:100%;background-color:rgb(70, 153, 24);">E</div>
+                                                            </div> `;
+
+                                                           
+        })
+    }
+
+    let stats = [];
+    let resultados = [];
 </script>

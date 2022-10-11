@@ -2,8 +2,9 @@ const loginForm = document.querySelector("form.login");
 const cuestionarioForm = document.querySelector("form.cuestionario");
 const out = document.querySelector(".out");
 const loading = document.querySelector(".loading");
-const correctas = ["a", "b", "c", "d", "e"];
+const correctas = ["c", "b", "e", "a", "b", "b","d","c","a","d","d","e","c","c","b","c","b","d","e","c","b","e","d","e","a","c","b","c","a","e"];
 let respuestas = [];
+let paso = 0;
 
 let cantCorrectas = 0;
 
@@ -37,15 +38,11 @@ function enviarRespuestas(){
 
     chequearRespuestas();
 
-    setInterval(()=>{
-        toggleLoading(false);
-    }, 1500);
+    
 
     let registro = {
         nombre: loginForm.nombre.value,
         apellido : loginForm.apellido.value,
-        email : loginForm.email.value,
-        hpc : loginForm.hpc.value,
         cantCorrectas,
         respuestas
     };
@@ -53,8 +50,13 @@ function enviarRespuestas(){
     fetch('insertRegistro.jsp', {body : JSON.stringify(registro), method : 'POST'})
                 .then(r => r.json())
                 .then(r => {
-              
                     console.log(r);
+                    document.querySelectorAll(".pregunta").forEach(e => {
+                        e.classList.remove("oculto");
+                        
+                    });
+                    scroll(0,0);
+                    toggleLoading(false);
                 });
 }
 
@@ -131,7 +133,7 @@ function toggleLoading(status){
 /* Muestra el puntaje en el encabezado */
 function mostrarPuntaje(ok){
     scroll(0,0);
-    document.querySelector("#puntaje").innerHTML = `Su puntaje es: ${(ok / correctas.length ) * 100} %`;
+    document.querySelector("#puntaje").innerHTML = `Su puntaje es: ${Math.round((ok / correctas.length ) * 100)} %`;
     document.querySelector("#correctas").innerHTML = `Contestó correctamente ${ok} respuesta/s`;
 }
 
@@ -144,3 +146,24 @@ document.querySelectorAll(".respuesta").forEach(res => {
             res.querySelector("input").click();
     });
 });
+
+function siguientePaso(){
+
+    const preguntas = document.querySelectorAll(".pregunta");
+
+    if(!preguntas[paso].querySelector("input").reportValidity()) return;
+    
+    if(paso == 28){
+        document.querySelector("#enviar-btn").classList.toggle("oculto");
+        document.querySelector("#siguiente-btn").classList.toggle("oculto");
+    }
+
+    preguntas[paso].classList.toggle("oculto");
+    preguntas[paso + 1].classList.toggle("oculto");
+    paso++;   
+}
+
+
+function dqs(selector){
+    return document.querySelector(selector);
+}

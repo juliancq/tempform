@@ -20,17 +20,17 @@
             <label for="apellido">Apellido</label>
             <input type="text" name="apellido" minlength="3" required>
         </div>
-        <div class="item">
+        <!-- <div class="item">
             <label for="email">Email</label>
             <input type="email" name="email">
-        </div>
-        <div class="item">
+        </div> -->
+        <!-- <div class="item">
             <label for="hpc">¿Es colaborador en <img id="hpc-logo" src="logo.gif" alt="HPC">?</label>
-            <div>
-                Sí <input type="radio" name="hpc" value="1" required>
-                No <input type="radio" name="hpc" value="0" required>
+            <div style="display: flex;align-items: center;gap: 1em;">
+                Sí <input type="radio" name="hpc" value="1" required style="width: 20px; height:20px">
+                No <input type="radio" name="hpc" value="0" required style="width: 20px; height:20px">
             </div>
-        </div>
+        </div> -->
         <button type="button" class="btn" onclick="ingresar()">Ingresar</button>
     </form>
 
@@ -57,84 +57,466 @@
             <br>
             <span id="correctas"></span>
         </div>
-        <!-- 1 -->
-        <div class="pregunta">
-            <div class="titulo">
-                <div class="nro">#1</div>
-                Paciente de 45 años de edad que presenta vértigo incapacitante y refractario al
-                tratamiento médico completo, cual es la terapéutica más adecuada?
-            </div>
-            <div class="respuestas">
-                <div class="respuesta">a. Estapedectomía <input type="radio" name="res1" value="a" required></div>
-                <div class="respuesta">b. Estapedostomía<input type="radio" name="res1" value="b" required></div>
-                <div class="respuesta">c. Neurectomía vestibular/ descompresión del saco endolinfático<input type="radio" name="res1" value="c" required></div>
-                <div class="respuesta">d. Timpanectomía<input type="radio" name="res1" value="d" required></div>
-                <div class="respuesta">e. Maniobras de reposición canalicular<input type="radio" name="res1" value="e" required></div>
-            </div>
-        </div>
         
-        <!-- 2 -->
-        <div class="pregunta">
-            <div class="titulo">
-                <div class="nro">#2</div> 
-                Cuál de estos pares craneales es el más tempranamente afectado en un tumor de cavum?  
+        
+        
+            <!-- 1 -->
+            <div class="pregunta">
+                <div class="titulo">
+                    <div class="nro">#1</div>
+                    Paciente de 45 años de edad que presenta vértigo incapacitante y refractario al
+                    tratamiento médico completo, cual es la terapéutica más adecuada?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Estapedectomía <input type="radio" name="preg1" value="a" required></div>
+                    <div class="respuesta">b. Estapedostomía<input type="radio" name="preg1" value="b" required></div>
+                    <div class="respuesta">c. Neurectomía vestibular/ descompresión del saco endolinfático<input type="radio" name="preg1" value="c" required></div>
+                    <div class="respuesta">d. Timpanectomía<input type="radio" name="preg1" value="d" required></div>
+                    <div class="respuesta">e. Maniobras de reposición canalicular<input type="radio" name="preg1" value="e" required></div>
+                </div>
             </div>
-            <div class="respuestas">
-                <div class="respuesta">a. IV par <input type="radio" name="res2" value="a" required></div>
-                <div class="respuesta">b. VI par <input type="radio" name="res2" value="b" required></div>
-                <div class="respuesta">c. III par <input type="radio" name="res2" value="c" required></div>
-                <div class="respuesta">d. Rama oftálmica del V par <input type="radio" name="res2" value="d" required></div>
-                <div class="respuesta">e. Rama maxilar del V par <input type="radio" name="res2" value="e" required></div>
+            
+            <!-- 2 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#2</div> 
+                    Cuál de estos pares craneales es el más tempranamente afectado en un tumor de cavum?  
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. IV par <input type="radio" name="preg2" value="a" required></div>
+                    <div class="respuesta">b. VI par <input type="radio" name="preg2" value="b" required></div>
+                    <div class="respuesta">c. III par <input type="radio" name="preg2" value="c" required></div>
+                    <div class="respuesta">d. Rama oftálmica del V par <input type="radio" name="preg2" value="d" required></div>
+                    <div class="respuesta">e. Rama maxilar del V par <input type="radio" name="preg2" value="e" required></div>
+                </div>
             </div>
-        </div>
 
-        <!-- 3 -->
-        <div class="pregunta">
-            <div class="titulo">
-                <div class="nro">#3</div> 
-                Cual es el tratamiento de elección en un paciente de 35 años de edad con diagnóstico de colesteatoma?
+            <!-- 3 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#3</div> 
+                    Cual es el tratamiento de elección en un paciente de 35 años de edad con diagnóstico de colesteatoma?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Tratamiento antibiótico según antibiograma<input type="radio" name="preg3" value="a" required></div>
+                    <div class="respuesta">b. Corticoides intratimpánicos <input type="radio" name="preg3" value="b" required></div>
+                    <div class="respuesta">c. Instrumentación y toilettes frecuentes en consultorio <input type="radio" name="preg3" value="c" required></div>
+                    <div class="respuesta">d. Radioterapia radical <input type="radio" name="preg3" value="d" required></div>
+                    <div class="respuesta">e. Tratamiento quirúrgico <input type="radio" name="preg3" value="e" required></div>
+                </div>
             </div>
-            <div class="respuestas">
-                <div class="respuesta">a. Tratamiento antibiótico según antibiograma<input type="radio" name="res3" value="a" required></div>
-                <div class="respuesta">b. Corticoides intratimpánicos <input type="radio" name="res3" value="b" required></div>
-                <div class="respuesta">c. Instrumentación y toilettes frecuentes en consultorio <input type="radio" name="res3" value="c" required></div>
-                <div class="respuesta">d. Radioterapia radical <input type="radio" name="res3" value="d" required></div>
-                <div class="respuesta">e. Tratamiento quirúrgico <input type="radio" name="res3" value="e" required></div>
-            </div>
-        </div>
 
-        <!-- 4 -->
-        <div class="pregunta">
-            <div class="titulo">
-                <div class="nro">#4</div> 
-                Cual de las siguientes características NO corresponde a un cuadro típico de VPPB?
+            <!-- 4 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#4</div> 
+                    Cual de las siguientes características NO corresponde a un cuadro típico de VPPB?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Hipoacusia y acúfeno que se presentan durante el episodio <input type="radio" name="preg4" value="a" required></div>
+                    <div class="respuesta">b. Vértigo de segundos de duración <input type="radio" name="preg4" value="b" required></div>
+                    <div class="respuesta">c. El cuadro se desencadena por movimientos cefalicos <input type="radio" name="preg4" value="c" required></div>
+                    <div class="respuesta">d. El nistagmus se desencadena con la maniobra de Dix Halpike <input type="radio" name="preg4" value="d" required></div>
+                    <div class="respuesta">e. Períodos intercrisis asintomáticos <input type="radio" name="preg4" value="e" required></div>
+                </div>
             </div>
-            <div class="respuestas">
-                <div class="respuesta">a. Hipoacusia y acúfeno que se presentan durante el episodio <input type="radio" name="res4" value="a" required></div>
-                <div class="respuesta">b. Vértigo de segundos de duración <input type="radio" name="res4" value="b" required></div>
-                <div class="respuesta">c. El cuadro se desencadena por movimientos cefalicos <input type="radio" name="res4" value="c" required></div>
-                <div class="respuesta">d. El nistagmus se desencadena con la maniobra de Dix Halpike <input type="radio" name="res4" value="d" required></div>
-                <div class="respuesta">e. Períodos intercrisis asintomáticos <input type="radio" name="res4" value="e" required></div>
-            </div>
-        </div>
 
-        <!-- 5 -->
-        <div class="pregunta">
-            <div class="titulo">
-                <div class="nro">#5</div> 
-                Que estudio debe solicitarse a un paciente varón de 6 años de edad que presenta poliposis nasal bilateral?
+            <!-- 5 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#5</div> 
+                    Que estudio debe solicitarse a un paciente varón de 6 años de edad que presenta poliposis nasal bilateral?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Estudio bacteriológico de secreciones nasales <input type="radio" name="preg5" value="a" required></div>
+                    <div class="respuesta">b. Test del sudor <input type="radio" name="preg5" value="b" required></div>
+                    <div class="respuesta">c. Rinodebitomanometría <input type="radio" name="preg5" value="c" required></div>
+                    <div class="respuesta">d. Videoestroboscopía <input type="radio" name="preg5" value="d" required></div>
+                    <div class="respuesta">e. Ninguno de los anteriores, las poliposis nasales son frecuentes en la infancia <input type="radio" name="preg5" value="e" required></div>
+                </div>
             </div>
-            <div class="respuestas">
-                <div class="respuesta">a. Estudio bacteriológico de secreciones nasales <input type="radio" name="res5" value="a" required></div>
-                <div class="respuesta">b. Test del sudor <input type="radio" name="res5" value="b" required></div>
-                <div class="respuesta">c. Rinodebitomanometría <input type="radio" name="res5" value="c" required></div>
-                <div class="respuesta">d. Videoestroboscopía <input type="radio" name="res5" value="d" required></div>
-                <div class="respuesta">e. Ninguno de los anteriores, las poliposis nasales son frecuentes en la infancia <input type="radio" name="res5" value="e" required></div>
+
+            <!-- 6 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#6</div> 
+                    Le consulta un paciente de 25 años de edad, cantante, por disfonía de 2 meses de evolución. Cual es el estudio de elección?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Videodeglución <input type="radio" name="preg6" value="a" required></div>
+                    <div class="respuesta">b. Videoestroboscopía <input type="radio" name="preg6" value="b" required></div>
+                    <div class="respuesta">c. Tac de cuello con contraste <input type="radio" name="preg6" value="c" required></div>
+                    <div class="respuesta">d. Broncoscopía rígida <input type="radio" name="preg6" value="d" required></div>
+                    <div class="respuesta">e. RMN con contraste de cuello <input type="radio" name="preg6" value="e" required></div>
+                </div>
             </div>
-        </div>
+            
+            <!-- 7 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#7</div> 
+                    Cual de las siguientes características es correcta con respecto a la maniobra de Dix Halpike en un paciente con VPPB?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Presenta latencia <input type="radio" name="preg7" value="a" required></div>
+                    <div class="respuesta">b. Se agota <input type="radio" name="preg7" value="b" required></div>
+                    <div class="respuesta">c. Es unidireccional <input type="radio" name="preg7" value="c" required></div>
+                    <div class="respuesta">d. A, B y C son correctas <input type="radio" name="preg7" value="d" required></div>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#8</div> 
+                    La cuerda del tímpano es rama de:
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. VIII par <input type="radio" name="preg8" value="a" required></div>
+                    <div class="respuesta">b. Glosofaríngeo <input type="radio" name="preg8" value="b" required></div>
+                    <div class="respuesta">c. Segunda porción del VII <input type="radio" name="preg8" value="c" required></div>
+                    <div class="respuesta">d. Tercera porción del VII <input type="radio" name="preg8" value="d" required></div>
+                    <div class="respuesta">d. Trigémino <input type="radio" name="preg8" value="d" required></div>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#9</div> 
+                    El reclutamiento es un fenómeno que denota la afección de cuál de las siguientes estructuras?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Cóclea <input type="radio" name="preg9" value="a" required></div>
+                    <div class="respuesta">b. Nervio auditivo <input type="radio" name="preg9" value="b" required></div>
+                    <div class="respuesta">c. Corteza auditiva <input type="radio" name="preg9" value="c" required></div>
+                    <div class="respuesta">d. Martillo y yunque <input type="radio" name="preg9" value="d" required></div>
+                    <div class="respuesta">d. Yunque y estribo <input type="radio" name="preg9" value="d" required></div>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#10</div> 
+                    El contenido del conducto auditivo interno es:
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. VIII par <input type="radio" name="preg10" value="a" required></div>
+                    <div class="respuesta">b. VII par e intermediario de Wrisberg <input type="radio" name="preg10" value="b" required></div>
+                    <div class="respuesta">c. VIII y IX pares <input type="radio" name="preg10" value="c" required></div>
+                    <div class="respuesta">d. VII par, VIII par e intermediario de Wrisberg <input type="radio" name="preg10" value="d" required></div>
+                    <div class="respuesta">e. VIII par, XI par e intermediario de Wrisberg <input type="radio" name="preg10" value="e" required></div>
+                </div>
+            </div>
+        
+            <!-- 11 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#11</div> 
+                    Cuál de estos músculos es dilatador de la glotis
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Tiroaritenoideo <input type="radio" name="preg11" value="a" required></div>
+                    <div class="respuesta">b. Cricoaritenoideo lateral <input type="radio" name="preg11" value="b" required></div>
+                    <div class="respuesta">c. Aritenoideo <input type="radio" name="preg11" value="c" required></div>
+                    <div class="respuesta">d. Cricoaritenoideo posterior <input type="radio" name="preg11" value="d" required></div>
+                    <div class="respuesta">e. Ninguno es correcto <input type="radio" name="preg11" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#12</div> 
+                    En cuáles de estas estructuras de la pared lateral nasal tiene su drenaje el conducto lacrimonasal?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Meato superior <input type="radio" name="preg12" value="a" required></div>
+                    <div class="respuesta">b. Meato medio <input type="radio" name="preg12" value="b" required></div>
+                    <div class="respuesta">c. Infundíbulo frontal <input type="radio" name="preg12" value="c" required></div>
+                    <div class="respuesta">d. Región posterior del septum <input type="radio" name="preg12" value="d" required></div>
+                    <div class="respuesta">e. Meato inferior <input type="radio" name="preg12" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 13 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#13</div> 
+                    Cuál de estos sintomas NO es característico del tumor de cavum:
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. OMS unilateral <input type="radio" name="preg13" value="a" required></div>
+                    <div class="respuesta">b. Adenopatias cervicales <input type="radio" name="preg13" value="b" required></div>
+                    <div class="respuesta">c. Perforación septal <input type="radio" name="preg13" value="c" required></div>
+                    <div class="respuesta">d. Insuficiencia ventilatoria nasal <input type="radio" name="preg13" value="d" required></div>
+                    <div class="respuesta">e. Trastornos neurooftálmicos en los estadios avanzados <input type="radio" name="preg13" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 14 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#14</div> 
+                    Cuál es el tumor benigno más frecuente del ángulo pontocerebeloso?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Meningioma <input type="radio" name="preg14" value="a" required></div>
+                    <div class="respuesta">b. Granuloma de colesterol de punta de peñasco <input type="radio" name="preg14" value="b" required></div>
+                    <div class="respuesta">c. Neurinoma del acústico <input type="radio" name="preg14" value="c" required></div>
+                    <div class="respuesta">d. Quiste aracnoideo <input type="radio" name="preg14" value="d" required></div>
+                    <div class="respuesta">e. Ninguno es correcto <input type="radio" name="preg14" value="e" required></div>
+                </div>
+            </div>
+            
+
+            <!-- 15 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#15</div> 
+                    De que arteria son ramas las arterias etmoidales anterior y posterior?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Carotida externa <input type="radio" name="preg15" value="a" required></div>
+                    <div class="respuesta">b. Oftálmica <input type="radio" name="preg15" value="b" required></div>
+                    <div class="respuesta">c. Facial <input type="radio" name="preg15" value="c" required></div>
+                    <div class="respuesta">d. Palatina <input type="radio" name="preg15" value="d" required></div>
+                    <div class="respuesta">e. Faríngea ascendente <input type="radio" name="preg15" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 16 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#16</div> 
+                    En cuanto al tratamiento de las rinosinusitis fúngicas invasivas
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Se realizan con antimicóticos endovenosos exclusivamente <input type="radio" name="preg16" value="a" required></div>
+                    <div class="respuesta">b. Se realizan lavajes con antimicóticos según cultivo y según evolución se determina si requiere tratamiento quirúrgico <input type="radio" name="preg16" value="b" required></div>
+                    <div class="respuesta">c. El tratamiento siempre es quirúrgico <input type="radio" name="preg16" value="c" required></div>
+                    <div class="respuesta">d. Se indican corticoides tópicos y tratamiento endovenoso con antimicóticos <input type="radio" name="preg16" value="d" required></div>
+                    <div class="respuesta">e. Se indican corticoides tópicos + antimicóticos via oral <input type="radio" name="preg16" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 17 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#17</div> 
+                    En cuanto a la estadificación TNM de tumores de glotis, a que corresponde un tumor T1a?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Tumor de subglotis <input type="radio" name="preg17" value="a" required></div>
+                    <div class="respuesta">b. Tumor que se presenta en una de las cuerdas vocales <input type="radio" name="preg17" value="b" required></div>
+                    <div class="respuesta">c. Tumor de la banda ventricular <input type="radio" name="preg17" value="c" required></div>
+                    <div class="respuesta">d. Tumor de la región poscricoidea <input type="radio" name="preg17" value="d" required></div>
+                    <div class="respuesta">e. Tumor de ambas cuerdas vocales y la comisura anterior <input type="radio" name="preg17" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 18-->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#18</div> 
+                    Cuál de estas es la causa más frecuente de sinusitis maxilar unilateral?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Sinusitis fúngica invasiva <input type="radio" name="preg18" value="a" required></div>
+                    <div class="respuesta">b. Tumor de seno maxilar <input type="radio" name="preg18" value="b" required></div>
+                    <div class="respuesta">c. Compromiso por síndrome de Wegener <input type="radio" name="preg18" value="c" required></div>
+                    <div class="respuesta">d. Sinusitis odontogena <input type="radio" name="preg18" value="d" required></div>
+                    <div class="respuesta">e. Sindrome de Widal <input type="radio" name="preg18" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 19-->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#19</div> 
+                    En cuanto a los abscesos periamigdalinos
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Son complicaciones de las faringoamigdalitis eritematopultaceas<input type="radio" name="preg19" value="a" required></div>
+                    <div class="respuesta">b. Se debe realizar drenaje del mismo + tratamiento antibiotico <input type="radio" name="preg19" value="b" required></div>
+                    <div class="respuesta">c. Se manifiestan con odinofagia <input type="radio" name="preg19" value="c" required></div>
+                    <div class="respuesta">d. A y C son correctos <input type="radio" name="preg19" value="d" required></div>
+                    <div class="respuesta">e. A, B y C son correctos <input type="radio" name="preg19" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 20-->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#20</div> 
+                    De cual de las siguientes es rama la arteria oftálmica?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Carotida externa <input type="radio" name="preg20" value="a" required></div>
+                    <div class="respuesta">b. Tronco basilar <input type="radio" name="preg20" value="b" required></div>
+                    <div class="respuesta">c. Carotida interna<input type="radio" name="preg20" value="c" required></div>
+                    <div class="respuesta">d. Esfenopalatina <input type="radio" name="preg20" value="d" required></div>
+                    <div class="respuesta">e. Maxilar interna <input type="radio" name="preg20" value="e" required></div>
+                </div>
+            </div>
+        
+            <!-- 21 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#21</div> 
+                    En los colgajos nasoseptales que se utiizan para cirugías de base de cráneo, la arteria nutricia del colgajo es:
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Arteria etmoidal anterior <input type="radio" name="preg21" value="a" required></div>
+                    <div class="respuesta">b. Arteria esfenopalatina <input type="radio" name="preg21" value="b" required></div>
+                    <div class="respuesta">c. Arteria basilar <input type="radio" name="preg21" value="c" required></div>
+                    <div class="respuesta">d. Arteria cerebral anterior <input type="radio" name="preg21" value="d" required></div>
+                    <div class="respuesta">e. Arteria etmoidal posterior <input type="radio" name="preg21" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 22 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#22</div> 
+                    En cuanto a las sinusitis fúngicas invasivas fulminantes, cual es la afirmación correcta?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Se presentan en pacientes inmunocomprometidos <input type="radio" name="preg22" value="a" required></div>
+                    <div class="respuesta">b. La mortalidad es del 60 al 80% <input type="radio" name="preg22" value="b" required></div>
+                    <div class="respuesta">c. El tratamiento siempre es quirúrgico <input type="radio" name="preg22" value="c" required></div>
+                    <div class="respuesta">d. Una imagen endoscópica temprana son las lesiones por isquemia y necrosis del cornete medio <input type="radio" name="preg22" value="d" required></div>
+                    <div class="respuesta">e. Todas son correctas <input type="radio" name="preg22" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 23 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#23</div> 
+                    Cuál es el sitio adecuado para realizar una coniotomia en un paciente que presenta obstrucción laríngea?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Primer anillo traqueal <input type="radio" name="preg23" value="a" required></div>
+                    <div class="respuesta">b. Membrana tirohioidea <input type="radio" name="preg23" value="b" required></div>
+                    <div class="respuesta">c. Tiroides <input type="radio" name="preg23" value="c" required></div>
+                    <div class="respuesta">d. Membrana cricotiroidea <input type="radio" name="preg23" value="d" required></div>
+                    <div class="respuesta">e. Cricoides <input type="radio" name="preg23" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 24 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#24</div> 
+                    El fibroangioma nasofaríngeo juvenil:
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Siempre se presenta en varones <input type="radio" name="preg24" value="a" required></div>
+                    <div class="respuesta">b. Clinicamente se manifiestan con epistaxis y obstruccion nasal en estadios iniciales <input type="radio" name="preg24" value="b" required></div>
+                    <div class="respuesta">c. El tratamento consiste en cirugía <input type="radio" name="preg24" value="c" required></div>
+                    <div class="respuesta">d. Las recidivas son frecuentes <input type="radio" name="preg24" value="d" required></div>
+                    <div class="respuesta">e. Todas son correctas <input type="radio" name="preg24" value="e" required></div>
+                </div>
+            </div>
+            
+
+            <!-- 25 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#25</div> 
+                    Paciente de 50 años de edad, sin antecedentes, presenta hipoacusia neurosensorial derecha modera en oido izquierdo con umbrales auditivos normales. Que estudios debe solicitarse?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. RNM de oidos con contraste EV <input type="radio" name="preg25" value="a" required></div>
+                    <div class="respuesta">b. Timpanometria oido derecho con reflejos acusticos <input type="radio" name="preg25" value="b" required></div>
+                    <div class="respuesta">c. OEAs. <input type="radio" name="preg25" value="c" required></div>
+                    <div class="respuesta">d. Electrococleografia <input type="radio" name="preg25" value="d" required></div>
+                    <div class="respuesta">e. Prueba de Whatson y Tolan <input type="radio" name="preg25" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 26 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#26</div> 
+                    Cual de las siguientes patologias cursa con hipoacusia neurosenrorial fluctuante?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. OME <input type="radio" name="preg26" value="a" required></div>
+                    <div class="respuesta">b. Neuronitis vestibular <input type="radio" name="preg26" value="b" required></div>
+                    <div class="respuesta">c. Sindrome de Meniere <input type="radio" name="preg26" value="c" required></div>
+                    <div class="respuesta">d. Otoesclerosis <input type="radio" name="preg26" value="d" required></div>
+                    <div class="respuesta">e. Colesteatoma <input type="radio" name="preg26" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 27 -->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#27</div> 
+                    Cual de la siguiente no es una caracteristica habitual de los vertigos perifericos?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Nistagmus horizontorotatorio <input type="radio" name="preg27" value="a" required></div>
+                    <div class="respuesta">b. Nistamgus vertical <input type="radio" name="preg27" value="b" required></div>
+                    <div class="respuesta">c. Nauseas y vomitos <input type="radio" name="preg27" value="c" required></div>
+                    <div class="respuesta">d. Romberg positiva <input type="radio" name="preg27" value="d" required></div>
+                    <div class="respuesta">e. Hipoacusia <input type="radio" name="preg27" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 28-->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#28</div> 
+                    Cual es el tipo más frecuentes de tumores malignos de laringe?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Carcinoma mucoepidermoide <input type="radio" name="preg28" value="a" required></div>
+                    <div class="respuesta">b. Linfoma <input type="radio" name="preg28" value="b" required></div>
+                    <div class="respuesta">c. Carcinoma epidermoide <input type="radio" name="preg28" value="c" required></div>
+                    <div class="respuesta">d. Melanoma <input type="radio" name="preg28" value="d" required></div>
+                    <div class="respuesta">e. Sarcoma <input type="radio" name="preg28" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 29-->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#29</div> 
+                    Las OEAs en recien nacidos:
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Son el estudio de screening para deteccion temprana de hipoacusia <input type="radio" name="preg29" value="a" required></div>
+                    <div class="respuesta">b. Se realizan preferentemente a los 3 años de vida <input type="radio" name="preg29" value="b" required></div>
+                    <div class="respuesta">c. Se realizan solo en recien nacidos con bajo peso o prematuros <input type="radio" name="preg29" value="c" required></div>
+                    <div class="respuesta">d. A y B son correctas <input type="radio" name="preg29" value="d" required></div>
+                    <div class="respuesta">e. A y C son correctas <input type="radio" name="preg29" value="e" required></div>
+                </div>
+            </div>
+
+            <!-- 30-->
+            <div class="pregunta oculto">
+                <div class="titulo">
+                    <div class="nro">#30</div> 
+                    Paciente de 67 años consulta por adenopatia laterocervical izquierda unica de 4 cm y OME izquierda, cual de estas patologias podria presentar?
+                </div>
+                <div class="respuestas">
+                    <div class="respuesta">a. Sindrome de Meniere <input type="radio" name="preg30" value="a" required></div>
+                    <div class="respuesta">b. Colesteatoma izquierdo <input type="radio" name="preg30" value="b" required></div>
+                    <div class="respuesta">c. Neuronitis vestibular izquierda <input type="radio" name="preg30" value="c" required></div>
+                    <div class="respuesta">d. Mastoiditis izquierda <input type="radio" name="preg30" value="d" required></div>
+                    <div class="respuesta">e. Tumor de cavum <input type="radio" name="preg30" value="e" required></div>
+                </div>
+            </div>
+        
 
 
-        <button type="button" id="enviar-btn" class="btn" onclick="enviarRespuestas()">Enviar respuestas</button>
+
+        <button type="button" id="siguiente-btn" class="btn" onclick="siguientePaso()">Avanzar</button>
+        <button type="button" id="enviar-btn" class="btn oculto" onclick="enviarRespuestas()">Enviar respuestas</button>
     </form>
 
     
